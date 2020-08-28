@@ -1,0 +1,25 @@
+.search {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: hsl(0, 0%, 100%);
+}
+.search__form {
+    flex-grow: 1;
+}
+.search__input {
+    width: 100%;
+    padding: 2px;
+    border-color: transparent;
+    font-size: 20px;
+}
+
+.search__input:focus {
+    outline: none;
+}

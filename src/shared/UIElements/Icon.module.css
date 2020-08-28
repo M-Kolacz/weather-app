@@ -1,0 +1,9 @@
+.icon {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 20px;
+    color: hsl(0, 0%, 38%);
+}
+.icon:hover {
+    cursor: pointer;
+}

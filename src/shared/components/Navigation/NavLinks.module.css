@@ -1,0 +1,27 @@
+.navLinks__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.navLinks__item {
+    text-align: center;
+    flex-grow: 1;
+    width: 1px;
+}
+.navLinks__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-bottom: 2px transparent solid;
+    color: #b6cae5;
+    text-decoration: none;
+}
+.navLinks__link:hover {
+    border-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+}

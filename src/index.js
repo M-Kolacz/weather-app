@@ -1,17 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import { createStore, compose } from 'redux';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import App from './App';
+import weatherReducer from './store/reducers/weather';
 import * as serviceWorker from './serviceWorker';
 
+import './global/reset.css';
+
+// REDUX
+
+const composeEnhancers =
+    (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) ||
+    compose;
+
+const store = createStore(weatherReducer, composeEnhancers());
+
+// FONTAWESOME
+
+library.add(faMapMarkerAlt, faSearch);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
