@@ -8,7 +8,7 @@
     margin: 0 auto;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--white);
 }
 .search__form {
     flex-grow: 1;
@@ -17,7 +17,7 @@
     width: 100%;
     padding: 2px;
     border-color: transparent;
-    font-size: 20px;
+    font-size: var(--h3);
 }
 
 .search__input:focus {

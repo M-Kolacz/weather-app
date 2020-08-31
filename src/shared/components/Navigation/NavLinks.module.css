@@ -4,7 +4,7 @@
     list-style: none;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: hsl(0, 0%, 100%);
+    color: var(--white);
 }
 
 .navLinks__item {
@@ -17,11 +17,12 @@
     width: 100%;
     height: 100%;
     padding: 5px;
+    font-size: var(--h5);
     border-bottom: 2px transparent solid;
-    color: #b6cae5;
+    color: var(--light-blue);
     text-decoration: none;
 }
 .navLinks__link:hover {
-    border-color: hsl(0, 0%, 100%);
-    color: hsl(0, 0%, 100%);
+    border-color: var(--white);
+    color: var(--white);
 }

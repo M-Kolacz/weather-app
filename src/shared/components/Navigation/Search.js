@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useHttpClient } from '../../hooks/http-hook';
+import { getGeocodePosition } from '../../util/getGeocodePosition';
 import { getCityUrl } from '../../util/getUrl';
 
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
@@ -29,10 +30,7 @@ const Search = () => {
     };
 
     const getCurrentPosition = () => {
-        navigator.geolocation.getCurrentPosition((position) => {
-            const { latitude, longitude } = position.coords;
-            fetchDataByLocalization({ lat: latitude, lon: longitude });
-        });
+        getGeocodePosition(setInputValue, fetchDataByLocalization);
     };
 
     return (

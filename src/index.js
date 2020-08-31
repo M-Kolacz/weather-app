@@ -10,6 +10,8 @@ import weatherReducer from './store/reducers/weather';
 import * as serviceWorker from './serviceWorker';
 
 import './global/reset.css';
+import './global/typography.css';
+import './global/colors.css';
 
 // REDUX
 
