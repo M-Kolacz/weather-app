@@ -4,7 +4,9 @@
     --blue: hsl(207, 33%, 53%);
     --azure: hsl(205, 44%, 58%);
     --light-blue: hsl(214, 47%, 81%);
+    --wind-blue: hsl(198, 90%, 64%);
     --icon-color: hsl(0, 0%, 38%);
+    --arrow-color: hsl(201, 14%, 62%);
     --backdrop-background: hsla(0, 0%, 0%, 0.4);
 }
 

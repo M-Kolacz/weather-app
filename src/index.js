@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faSearch, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 import App from './App';
 import weatherReducer from './store/reducers/weather';
@@ -23,7 +23,7 @@ const store = createStore(weatherReducer, composeEnhancers());
 
 // FONTAWESOME
 
-library.add(faMapMarkerAlt, faSearch);
+library.add(faMapMarkerAlt, faSearch, faLocationArrow);
 
 ReactDOM.render(
     <React.StrictMode>

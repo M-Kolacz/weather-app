@@ -1,0 +1,9 @@
+.details {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+}
+.details__title {
+    font-size: var(--h5);
+    padding-bottom: 0.5rem;
+}

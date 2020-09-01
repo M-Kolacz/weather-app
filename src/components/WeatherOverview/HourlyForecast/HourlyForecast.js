@@ -19,7 +19,6 @@ const HourlyForecast = () => {
             <g transform={`translate(${x},${y})`}>
                 <svg x={-30} y={-50} width={1000} height={1000} viewBox='0 0 1024 1024' fill='#666'>
                     {hourlyForecastSvg(payload.value)}
-                    {console.log(payload)}
                 </svg>
 
                 <text

@@ -1,0 +1,20 @@
+.windChart {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 1rem;
+}
+.windChart::-webkit-scrollbar {
+    display: none;
+}
+.arrows {
+    margin-top: 10px;
+    margin-left: 21px;
+    width: 935.33px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow__container {
+    width: 20px;
+}

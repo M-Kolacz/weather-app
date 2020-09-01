@@ -24,7 +24,7 @@ const CurrentWeather = () => {
                         alt=''
                         className={classes.current__svg}
                     />
-                    <figcaption className={classes.description}>
+                    <figcaption className={classes.current__descrpition}>
                         {weather[0].description}
                     </figcaption>
                 </figure>

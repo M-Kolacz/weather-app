@@ -1,0 +1,37 @@
+.wind__container {
+    width: 100%;
+
+    padding-left: 1.5rem;
+}
+.wind__title {
+    font-size: var(--h5);
+    padding-bottom: 0.5rem;
+}
+.wind__represent {
+    display: flex;
+    align-items: center;
+}
+.wind__value {
+    display: inline-block;
+    font-size: var(--degree);
+    color: var(--wind-blue);
+}
+.wind_wrapper {
+    display: inline-block;
+    text-align: center;
+    font-size: var(--text-sm);
+}
+.wind__units {
+    display: block;
+    color: var(--icon-color);
+}
+.wind__description {
+    margin-left: 1rem;
+}
+.wind__power {
+    display: inline-block;
+    font-size: var(--h4);
+}
+.wind__direction {
+    font-size: var(--text-sm);
+}

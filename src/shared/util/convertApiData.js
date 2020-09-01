@@ -15,8 +15,12 @@ const convertMetresPerSecond = (value) => {
     return convertToInteger(value * 3.6);
 };
 
+const fixWindDegree = (degree) => {
+    return degree - 45;
+};
+
 export const convertCurrent = (current) => {
-    const { temp, feels_like, dew_point, pressure, visibility, wind_speed } = current;
+    const { temp, feels_like, dew_point, pressure, visibility, wind_speed, wind_deg } = current;
 
     return {
         ...current,
@@ -26,6 +30,7 @@ export const convertCurrent = (current) => {
         pressure: convertToKilo(pressure),
         visibility: convertToKilo(visibility),
         wind_speed: convertMetresPerSecond(wind_speed),
+        wind_deg: fixWindDegree(wind_deg),
     };
 };
 
@@ -35,9 +40,6 @@ export const convertHourly = (hourly) => {
         temp: convertToInteger(hour.temp),
         wind_speed: convertMetresPerSecond(hour.wind_speed),
         hour: getHour(hour.dt),
+        wind_deg: fixWindDegree(hour.wind_deg),
     }));
-};
-
-export const fixWindDegree = (degree) => {
-    return degree - 45;
 };

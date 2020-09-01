@@ -1,0 +1,11 @@
+.details {
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: var(--text-sm);
+}
+
+.details__indicator {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
