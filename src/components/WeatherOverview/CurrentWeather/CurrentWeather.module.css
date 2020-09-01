@@ -1,0 +1,47 @@
+.current {
+    width: 100%;
+    margin-top: 1rem;
+    color: var(--white);
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.current__time {
+    width: 100%;
+    color: var(--black);
+    font-size: var(--text-sm);
+    font-weight: bold;
+}
+
+.current__container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.current__info {
+    flex-basis: 50%;
+}
+
+.current__temperature {
+    display: flex;
+    font-size: var(--temp-big);
+    margin-bottom: 1rem;
+}
+.current__degree {
+    font-size: var(--degree);
+    margin-top: 10px;
+}
+
+.current__feelsLike {
+}
+
+.current__img {
+    flex-basis: 50%;
+    text-align: right;
+}
+.current__svg {
+    width: 100px;
+}
+.current__descrpition {
+    text-transform: capitalize;
+}

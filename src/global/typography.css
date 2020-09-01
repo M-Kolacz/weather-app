@@ -6,6 +6,9 @@
     --h3: calc(var(--h4) * var(--type-scale));
     --h2: calc(var(--h3) * var(--type-scale));
     --h1: calc(var(--h2) * var(--type-scale));
+    --temp-big: calc(var(--h1) * 3);
+    --degree: calc(var(--h1) * 2);
+
     --text-sm: calc(var(--base-size) / var(--type-scale));
 }
 html,

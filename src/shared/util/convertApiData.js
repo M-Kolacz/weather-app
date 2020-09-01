@@ -1,14 +1,18 @@
 import { getHour } from './convertTime';
 
-const fixToInteger = (number) => {
+const convertToInteger = (number) => {
     return Number(number.toFixed(0));
 };
-const fixToKilo = (value) => {
+const convertToTemp = (temp) => {
+    return convertToInteger(temp) + '°';
+};
+
+const convertToKilo = (value) => {
     return value / 1000;
 };
 
 const convertMetresPerSecond = (value) => {
-    return fixToInteger(value * 3.6);
+    return convertToInteger(value * 3.6);
 };
 
 export const convertCurrent = (current) => {
@@ -16,11 +20,11 @@ export const convertCurrent = (current) => {
 
     return {
         ...current,
-        temp: fixToInteger(temp),
-        feels_like: fixToInteger(feels_like),
-        dew_point: fixToInteger(dew_point),
-        pressure: fixToKilo(pressure),
-        visibility: fixToKilo(visibility),
+        temp: convertToInteger(temp),
+        feels_like: convertToTemp(feels_like),
+        dew_point: convertToInteger(dew_point),
+        pressure: convertToKilo(pressure),
+        visibility: convertToKilo(visibility),
         wind_speed: convertMetresPerSecond(wind_speed),
     };
 };
@@ -28,7 +32,7 @@ export const convertCurrent = (current) => {
 export const convertHourly = (hourly) => {
     return hourly.map((hour) => ({
         ...hour,
-        temp: fixToInteger(hour.temp),
+        temp: convertToInteger(hour.temp),
         wind_speed: convertMetresPerSecond(hour.wind_speed),
         hour: getHour(hour.dt),
     }));

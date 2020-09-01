@@ -1,0 +1,12 @@
+.hourlyChart {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 40px;
+}
+.hourlyChart::-webkit-scrollbar {
+    display: none;
+}
+.hourlyTime {
+    font-size: var(--h1);
+}
