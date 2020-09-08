@@ -1,13 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
+import { useSelectState } from '../../../shared/hooks/select-state-hook';
 import { getTime } from '../../../shared/util/convertTime';
 import { currentWeatherSvg } from '../../../shared/util/currentWeatherSvg';
+
+import { CURRENT } from '../../../shared/SSOT/timelineCondition';
 
 import classes from './CurrentWeather.module.css';
 
 const CurrentWeather = () => {
-    const { dt, temp, feels_like, weather } = useSelector((state) => state.currentWeather);
+    const { dt, temp, feels_like, weather } = useSelectState(CURRENT);
     return (
         <div className={classes.current}>
             <p className={classes.current__time}>{getTime(dt)}</p>

@@ -4,6 +4,8 @@ import { useHttpClient } from '../../hooks/http-hook';
 import { getGeocodePosition } from '../../util/getGeocodePosition';
 import { getCityUrl } from '../../util/getUrl';
 
+import { MAP_MARKER_ALT, SEARCH } from '../../SSOT/icons';
+
 import LoadingSpinner from '../../UIElements/LoadingSpinner';
 import ErrorModal from '../../UIElements/ErrorModal';
 import Icon from '../../UIElements/Icon';
@@ -36,7 +38,7 @@ const Search = () => {
     return (
         <>
             <div className={classes.search}>
-                <Icon iconName='map-marker-alt' onClick={getCurrentPosition} />
+                <Icon iconName={MAP_MARKER_ALT} onClick={getCurrentPosition} />
                 <form className={classes.search__form} onSubmit={handleForm}>
                     <input
                         type='text'
@@ -46,7 +48,7 @@ const Search = () => {
                         placeholder='Search city'
                     />
                 </form>
-                <Icon iconName='search' onClick={handleUrl} />
+                <Icon iconName={SEARCH} onClick={handleUrl} />
             </div>
             {isLoading && <LoadingSpinner />}
             {error && <ErrorModal />}

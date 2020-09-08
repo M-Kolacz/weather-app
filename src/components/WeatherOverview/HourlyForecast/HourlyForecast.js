@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { AreaChart, Area, LabelList, XAxis } from 'recharts';
 
+import { useSelectState } from '../../../shared/hooks/select-state-hook';
 import { hourlyForecastSvg } from '../../../shared/util/hourlyForecastSvg';
 import { setForecastHours } from '.././../../shared/util/setForecastHours';
+
+import { HOURLY } from '../../../shared/SSOT/timelineCondition';
 
 import classes from './HourlyForecast.module.css';
 
 const HourlyForecast = () => {
-    const hourlyForecast = useSelector((state) => state.hourlyForecast.slice(0, 18));
-
+    const hourlyForecast = useSelectState(HOURLY);
     useEffect(() => {
         setForecastHours(hourlyForecast);
     });

@@ -1,18 +1,22 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
+import { useSelectState } from '../../shared/hooks/select-state-hook';
 import { weatherIndicators } from './weatherIndicators';
+
+import { CURRENT } from '../../shared/SSOT/timelineCondition';
+
 import SectionContainer from '../../shared/UIElements/SectionContainer';
+import SectionTitle from '../../shared/UIElements/SectionTitle';
 
 import classes from './WeatherDetails.module.css';
 
 const WeatherDetails = () => {
-    const currentWeather = useSelector((state) => state.currentWeather);
+    const currentWeather = useSelectState(CURRENT);
     return (
         <SectionContainer>
             <div className={classes.details}>
                 <div className={classes.details__container}>
-                    <h2 className={classes.details__title}>Current details</h2>
+                    <SectionTitle>Current details</SectionTitle>
                     {weatherIndicators(currentWeather)}
                 </div>
             </div>

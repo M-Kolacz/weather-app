@@ -1,14 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { BarChart, Bar, XAxis, YAxis } from 'recharts';
+
+import { useSelectState } from '../../shared/hooks/select-state-hook';
+
+import { HOURLY } from '../../shared/SSOT/timelineCondition';
 
 import Arrow from '../../shared/UIElements/Arrow';
 
 import classes from './WindChart.module.css';
 
 const WindChart = () => {
-    const hourlyForecast = useSelector((state) => state.hourlyForecast.slice(0, 18));
-    console.log(hourlyForecast);
+    const hourlyForecast = useSelectState(HOURLY);
     const arrows = hourlyForecast.map((arrow, index) => (
         <span className={classes.arrows__container} key={`arrow${index}`}>
             <Arrow windDegree={arrow.wind_deg} customStyle={{ fontSize: '16px' }} />

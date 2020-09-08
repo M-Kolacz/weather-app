@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { LOCATION_ARROW } from '../SSOT/icons';
+
 import Icon from './Icon';
 
 const Arrow = ({ windDegree, customStyle }) => {
@@ -8,7 +10,7 @@ const Arrow = ({ windDegree, customStyle }) => {
         transform: `rotate(${windDegree}deg)`,
         color: 'var(--arrow-color)',
     };
-    return <Icon iconName='location-arrow' style={style} />;
+    return <Icon iconName={LOCATION_ARROW} style={style} />;
 };
 
 export default Arrow;

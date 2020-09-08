@@ -1,16 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
+import { useSelectState } from '../../shared/hooks/select-state-hook';
 import { getWindDirection, getWindPower } from '../../shared/util/getWindDescription';
+
+import { CURRENT } from '../../shared/SSOT/timelineCondition';
+
+import SectionTitle from '../../shared/UIElements/SectionTitle';
 import Arrow from '../../shared/UIElements/Arrow';
 
 import classes from './WindDescription.module.css';
 
 const WindDescription = () => {
-    const { wind_speed, wind_deg } = useSelector((state) => state.currentWeather);
+    const { wind_speed, wind_deg } = useSelectState(CURRENT);
+
     return (
         <div className={classes.wind__container}>
-            <h2 className={classes.wind__title}>Wind</h2>
+            <SectionTitle>Wind</SectionTitle>
             <div className={classes.wind__represent}>
                 <p className={classes.wind__value}>{wind_speed}</p>
                 <div className={classes.wind_wrapper}>

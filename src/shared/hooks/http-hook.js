@@ -3,9 +3,11 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-import * as actionTypes from '../../store/actions/actionTypes';
 import { getWeatherForecastUrl } from '../util/getUrl';
 import { convertCurrent, convertHourly } from '../util/convertApiData';
+
+import * as actionTypes from '../../store/actions/actionTypes';
+import { TODAY } from '../SSOT/paths';
 
 export const useHttpClient = () => {
     const [error, setError] = useState(false);
@@ -41,7 +43,7 @@ export const useHttpClient = () => {
 
             setIsLoading(false);
             document.activeElement.blur();
-            history.push('/today');
+            history.push(TODAY);
         } catch (err) {
             setError(true);
             setIsLoading(false);
@@ -63,7 +65,7 @@ export const useHttpClient = () => {
 
             setIsLoading(false);
             document.activeElement.blur();
-            history.push('/today');
+            history.push(TODAY);
         } catch (err) {
             setError(true);
             setIsLoading(false);

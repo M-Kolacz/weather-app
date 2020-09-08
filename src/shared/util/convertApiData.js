@@ -38,6 +38,10 @@ export const convertHourly = (hourly) => {
     return hourly.map((hour) => ({
         ...hour,
         temp: convertToInteger(hour.temp),
+        feels_like: convertToTemp(hour.feels_like),
+        dew_point: convertToInteger(hour.dew_point),
+        pressure: convertToKilo(hour.pressure),
+        visibility: convertToKilo(hour.visibility),
         wind_speed: convertMetresPerSecond(hour.wind_speed),
         hour: getHour(hour.dt),
         wind_deg: fixWindDegree(hour.wind_deg),

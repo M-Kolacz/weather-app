@@ -1,5 +1,13 @@
 import React from 'react';
 
+import {
+    DEW_POINT,
+    HUMIDITY,
+    PRESSURE,
+    UV_INDEX,
+    VISIBILITY,
+} from '../../shared/SSOT/weatherIndicators';
+
 import DetailIndicator from './DetailIndicator';
 
 export const weatherIndicators = (currentWeather) => {
@@ -10,7 +18,7 @@ export const weatherIndicators = (currentWeather) => {
             case 'humidity':
                 return initialArray.push(
                     <DetailIndicator
-                        indicator={'Humidity'}
+                        indicator={HUMIDITY}
                         value={`${currentWeather[key]}%`}
                         key={key}
                         order={1}
@@ -19,7 +27,7 @@ export const weatherIndicators = (currentWeather) => {
             case 'dew_point':
                 return initialArray.push(
                     <DetailIndicator
-                        indicator='Dew point'
+                        indicator={DEW_POINT}
                         value={`${currentWeather[key]}°C`}
                         key={key}
                         order={2}
@@ -28,7 +36,7 @@ export const weatherIndicators = (currentWeather) => {
             case 'pressure':
                 return initialArray.push(
                     <DetailIndicator
-                        indicator='Pressure'
+                        indicator={PRESSURE}
                         value={`${currentWeather[key]} mBar`}
                         key={key}
                         order={3}
@@ -37,7 +45,7 @@ export const weatherIndicators = (currentWeather) => {
             case 'uvi':
                 return initialArray.push(
                     <DetailIndicator
-                        indicator={'UV index'}
+                        indicator={UV_INDEX}
                         value={`${currentWeather[key]}`}
                         key={key}
                         order={4}
@@ -46,7 +54,7 @@ export const weatherIndicators = (currentWeather) => {
             case 'visibility':
                 return initialArray.push(
                     <DetailIndicator
-                        indicator={'Visibility'}
+                        indicator={VISIBILITY}
                         value={`${currentWeather[key]} km`}
                         key={key}
                         order={5}
