@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import { useHttpClient } from '../../hooks/http-hook';
-import { getGeocodePosition } from '../../util/getGeocodePosition';
-import { getCityUrl } from '../../util/getUrl';
+import { getGeocodePosition } from '../../util/get/getGeocodePosition';
+import { getCityUrl } from '../../util/get/getUrl';
 
 import { MAP_MARKER_ALT, SEARCH } from '../../SSOT/icons';
 

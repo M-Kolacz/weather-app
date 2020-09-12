@@ -2,25 +2,25 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis } from 'recharts';
 
 import { useSelectState } from '../../shared/hooks/select-state-hook';
+import { windArrows } from '../../shared/customCharts/windArrows';
+import { getChartWidth } from '../../shared/util/get/getChartWidth';
 
 import { HOURLY } from '../../shared/SSOT/timelineCondition';
-
-import Arrow from '../../shared/UIElements/Arrow';
 
 import classes from './WindChart.module.css';
 
 const WindChart = () => {
     const hourlyForecast = useSelectState(HOURLY);
-    const arrows = hourlyForecast.map((arrow, index) => (
-        <span className={classes.arrows__container} key={`arrow${index}`}>
-            <Arrow windDegree={arrow.wind_deg} customStyle={{ fontSize: '16px' }} />
-        </span>
-    ));
+
+    const arrows = windArrows(hourlyForecast);
+    const chartWidth = getChartWidth(hourlyForecast.length);
     return (
         <div className={classes.windChart}>
-            <div className={classes.arrows}>{arrows}</div>
+            <div className={classes.arrows} style={{ width: chartWidth - 55 }}>
+                {arrows}
+            </div>
             <BarChart
-                width={990}
+                width={chartWidth}
                 height={120}
                 data={hourlyForecast}
                 margin={{ top: 0, right: 30, left: 20, bottom: 5 }}

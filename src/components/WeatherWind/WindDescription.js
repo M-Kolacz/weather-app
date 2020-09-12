@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelectState } from '../../shared/hooks/select-state-hook';
-import { getWindDirection, getWindPower } from '../../shared/util/getWindDescription';
+import { getWindDirection, getWindPower } from '../../shared/util/get/getWindDescription';
 
 import { CURRENT } from '../../shared/SSOT/timelineCondition';
 

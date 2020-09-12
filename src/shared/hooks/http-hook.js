@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-import { getWeatherForecastUrl } from '../util/getUrl';
-import { convertCurrent, convertHourly } from '../util/convertApiData';
+import { getWeatherForecastUrl } from '../util/get/getUrl';
+import { convertCurrent, convertHourly } from '../util/convert/convertApiData';
 
 import * as actionTypes from '../../store/actions/actionTypes';
 import { TODAY } from '../SSOT/paths';

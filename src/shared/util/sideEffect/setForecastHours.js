@@ -1,4 +1,4 @@
-import { getHour } from './convertTime';
+import { getHour } from '../convert/convertTime';
 export const setForecastHours = (hourlyForecast) => {
     const textLabels = [...document.querySelectorAll('.text-time')];
 

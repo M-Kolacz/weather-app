@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+
+	<defs>
+		<linearGradient id="myGradient" gradientTransform="rotate(90)">
+			<stop offset="50%" stop-color="white" />
+			<stop offset="0%" stop-color="blue" />
+		</linearGradient>
+	</defs>
+
+	<path d="M256.452,512c81.62-0.242,148.809-68.446,148.189-150.069
+	C403.776,247.941,298.85,126.992,263.324,5.509c-1.076-3.68-4.2-5.514-7.323-5.509c-3.124-0.005-6.248,1.829-7.324,5.509
+	C213.152,126.992,108.225,247.941,107.36,361.931C106.74,443.554,173.929,511.758,255.549,512" fill="url('#myGradient')"
+		stroke='black' stroke-width="5" />
+</svg>

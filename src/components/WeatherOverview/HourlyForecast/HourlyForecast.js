@@ -2,41 +2,26 @@ import React, { useEffect } from 'react';
 import { AreaChart, Area, LabelList, XAxis } from 'recharts';
 
 import { useSelectState } from '../../../shared/hooks/select-state-hook';
-import { hourlyForecastSvg } from '../../../shared/util/hourlyForecastSvg';
-import { setForecastHours } from '.././../../shared/util/setForecastHours';
+import { setForecastHours } from '../../../shared/util/sideEffect/setForecastHours';
+import { getChartWidth } from '../../../shared/util/get/getChartWidth';
 
 import { HOURLY } from '../../../shared/SSOT/timelineCondition';
+
+import CustomAxisTick from '../../../shared/customCharts/CustomAxisTick';
 
 import classes from './HourlyForecast.module.css';
 
 const HourlyForecast = () => {
     const hourlyForecast = useSelectState(HOURLY);
+
     useEffect(() => {
         setForecastHours(hourlyForecast);
     });
-
-    const CustomizedAxisTick = ({ x, y, payload }) => {
-        return (
-            <g transform={`translate(${x},${y})`}>
-                <svg x={-30} y={-50} width={1000} height={1000} viewBox='0 0 1024 1024' fill='#666'>
-                    {hourlyForecastSvg(payload.value)}
-                </svg>
-
-                <text
-                    x={22}
-                    y={4}
-                    dy={16}
-                    textAnchor='end'
-                    fill='#000'
-                    className='text-time'
-                ></text>
-            </g>
-        );
-    };
+    const chartWidth = getChartWidth(hourlyForecast.length);
     return (
         <div className={classes.hourlyChart}>
             <AreaChart
-                width={1000}
+                width={chartWidth}
                 height={150}
                 data={hourlyForecast}
                 margin={{
@@ -65,7 +50,7 @@ const HourlyForecast = () => {
                 </Area>
                 <XAxis
                     dataKey='weather[0].icon'
-                    tick={CustomizedAxisTick}
+                    tick={CustomAxisTick}
                     axisLine={false}
                     tickLine={false}
                 />
