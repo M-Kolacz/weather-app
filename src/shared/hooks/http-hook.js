@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import { getWeatherForecastUrl } from '../util/get/getUrl';
-import { convertCurrent, convertHourly } from '../util/convert/convertApiData';
+import { convertHourly, convertDaily } from '../util/convert/convertApiData';
 
 import * as actionTypes from '../../store/actions/actionTypes';
 import { TODAY } from '../SSOT/paths';
@@ -33,11 +33,10 @@ export const useHttpClient = () => {
             const { lat, lon } = cityCoordinates.data.coord;
 
             const weatherData = await axios(getWeatherForecastUrl(lat, lon));
-            const { current, daily, hourly } = weatherData.data;
+            const { daily, hourly } = weatherData.data;
 
             setActualForecast({
-                currentWeather: convertCurrent(current),
-                dailyForecast: daily,
+                dailyForecast: convertDaily(daily),
                 hourlyForecast: convertHourly(hourly),
             });
 
@@ -55,10 +54,9 @@ export const useHttpClient = () => {
             setError(false);
 
             const weatherData = await axios(getWeatherForecastUrl(lat, lon));
-            const { current, daily, hourly } = weatherData.data;
+            const { daily, hourly } = weatherData.data;
 
             setActualForecast({
-                currentWeather: convertCurrent(current),
                 dailyForecast: daily,
                 hourlyForecast: convertHourly(hourly),
             });

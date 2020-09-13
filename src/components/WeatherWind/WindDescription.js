@@ -11,7 +11,7 @@ import Arrow from '../../shared/UIElements/Arrow';
 import classes from './WindDescription.module.css';
 
 const WindDescription = () => {
-    const { wind_speed, wind_deg } = useSelectState(CURRENT);
+    const [{ wind_speed, wind_deg }] = useSelectState(CURRENT);
 
     return (
         <div className={classes.wind__container}>

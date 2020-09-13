@@ -3,7 +3,7 @@ export const getCityUrl = (city) => {
 };
 
 export const getWeatherForecastUrl = (lat, lon) => {
-    return `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+    return `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,current&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
 };
 
 export const getGeocodeDataUrl = (lat, lon) => {

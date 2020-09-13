@@ -15,13 +15,13 @@ export const useSelectState = (timeline) => {
     let state;
 
     if (timeline === CURRENT) {
-        if (path === TODAY) state = weatherData.currentWeather;
-        else if (path === TOMORROW) state = weatherData.hourlyForecast[24];
+        if (path === TODAY) state = weatherData.dailyForecast[0];
+        else if (path === TOMORROW) state = weatherData.dailyForecast[1];
     } else if (timeline === HOURLY) {
         if (path === TODAY) state = weatherData.hourlyForecast.slice(todayStart, todayEnd);
         else if (path === TOMORROW)
             state = weatherData.hourlyForecast.slice(tomorrowStart, tomorrowEnd);
     }
 
-    return state;
+    return [state, path];
 };

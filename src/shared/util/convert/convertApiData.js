@@ -15,25 +15,6 @@ const convertMetresPerSecond = (value) => {
     return convertToInteger(value * 3.6);
 };
 
-const fixWindDegree = (degree) => {
-    return degree - 45;
-};
-
-export const convertCurrent = (current) => {
-    const { temp, feels_like, dew_point, pressure, visibility, wind_speed, wind_deg } = current;
-
-    return {
-        ...current,
-        temp: convertToInteger(temp),
-        feels_like: convertToTemp(feels_like),
-        dew_point: convertToInteger(dew_point),
-        pressure: convertToKilo(pressure),
-        visibility: convertToKilo(visibility),
-        wind_speed: convertMetresPerSecond(wind_speed),
-        wind_deg: fixWindDegree(wind_deg),
-    };
-};
-
 export const convertHourly = (hourly) => {
     return hourly.map((hour) => ({
         ...hour,
@@ -44,6 +25,25 @@ export const convertHourly = (hourly) => {
         visibility: convertToKilo(hour.visibility),
         wind_speed: convertMetresPerSecond(hour.wind_speed),
         hour: getHour(hour.dt),
-        wind_deg: fixWindDegree(hour.wind_deg),
+    }));
+};
+export const convertDaily = (daily) => {
+    return daily.map((day) => ({
+        ...day,
+        dew_point: convertToInteger(day.dew_point),
+        wind_speed: convertToInteger(day.wind_speed),
+
+        pressure: convertToKilo(day.pressure),
+        uvi: convertToInteger(day.uvi),
+        feels_like: {
+            ...day.feels_like,
+            day: convertToTemp(day.feels_like.day),
+        },
+        temp: {
+            ...day.temp,
+            day: convertToInteger(day.temp.day),
+            min: convertToTemp(day.temp.min),
+            max: convertToTemp(day.temp.max),
+        },
     }));
 };

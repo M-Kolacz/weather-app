@@ -11,7 +11,7 @@ import SectionTitle from '../../shared/UIElements/SectionTitle';
 import classes from './WeatherDetails.module.css';
 
 const WeatherDetails = () => {
-    const currentWeather = useSelectState(CURRENT);
+    const [currentWeather] = useSelectState(CURRENT);
     return (
         <SectionContainer>
             <div className={classes.details}>

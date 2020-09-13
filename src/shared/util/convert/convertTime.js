@@ -1,64 +1,41 @@
-const getNameMonth = (monthInNumber) => {
-    switch (monthInNumber) {
-        case 0:
-            return 'January';
+import { TODAY, TOMORROW } from '../../SSOT/paths';
 
-        case 1:
-            return 'February';
+const todayFormat = new Intl.DateTimeFormat('en', {
+    hourCycle: 'h24',
+    day: 'numeric',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+});
+const tomorrowFormat = new Intl.DateTimeFormat('en', {
+    weekday: 'long',
+    month: 'long',
+    day: '2-digit',
+});
+const hourFormat = new Intl.DateTimeFormat('en', {
+    hourCycle: 'h24',
+    hour: 'numeric',
+    minute: 'numeric',
+});
 
-        case 2:
-            return 'March';
+export const getTime = (path) => {
+    const today = new Date();
+    const tomorrow = new Date(today);
 
-        case 3:
-            return 'April';
+    switch (path) {
+        case TODAY:
+            return todayFormat.format(today);
 
-        case 4:
-            return 'May';
-
-        case 5:
-            return 'June';
-
-        case 6:
-            return 'July';
-
-        case 7:
-            return 'August';
-
-        case 8:
-            return 'September';
-
-        case 9:
-            return 'October';
-
-        case 10:
-            return 'November';
-
-        case 11:
-            return 'December';
+        case TOMORROW:
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            return tomorrowFormat.format(tomorrow);
 
         default:
-            return 'January';
+            return tomorrowFormat.format(today);
     }
-};
-const getCorrectHours = (Date) => {
-    return Date.getHours() < 10 ? '0' + Date.getHours() : Date.getHours();
-};
-const getCorrectMinutes = (Date) => {
-    return Date.getMinutes() < 10 ? '0' + Date.getMinutes() : Date.getMinutes();
-};
-
-const getDate = (dt) => {
-    return new Date(dt * 1000);
-};
-
-export const getTime = (dt) => {
-    const ActualDate = getDate(dt);
-    return `${ActualDate.getDate()} ${getNameMonth(ActualDate.getMonth())}, ${getCorrectHours(
-        ActualDate,
-    )}:${getCorrectMinutes(ActualDate)}`;
 };
 
 export const getHour = (dt) => {
-    const ActualDate = getDate(dt);
-    return `${getCorrectHours(ActualDate)}:${getCorrectMinutes(ActualDate)}`;
+    const date = new Date(dt * 1000);
+    return hourFormat.format(date);
 };

@@ -12,7 +12,7 @@ import CustomAxisTick from '../../../shared/customCharts/CustomAxisTick';
 import classes from './HourlyForecast.module.css';
 
 const HourlyForecast = () => {
-    const hourlyForecast = useSelectState(HOURLY);
+    const [hourlyForecast] = useSelectState(HOURLY);
 
     useEffect(() => {
         setForecastHours(hourlyForecast);

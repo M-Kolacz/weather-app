@@ -13,6 +13,10 @@
     font-weight: bold;
 }
 
+.current__dayNight {
+    padding-top: 0.5rem;
+}
+
 .current__container {
     display: flex;
     align-items: flex-end;
@@ -44,4 +48,5 @@
 }
 .current__descrpition {
     text-transform: capitalize;
+    margin-right: 10px;
 }

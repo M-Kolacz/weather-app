@@ -10,7 +10,7 @@ import { HOURLY } from '../../shared/SSOT/timelineCondition';
 import classes from './WindChart.module.css';
 
 const WindChart = () => {
-    const hourlyForecast = useSelectState(HOURLY);
+    const [hourlyForecast] = useSelectState(HOURLY);
 
     const arrows = windArrows(hourlyForecast);
     const chartWidth = getChartWidth(hourlyForecast.length);
