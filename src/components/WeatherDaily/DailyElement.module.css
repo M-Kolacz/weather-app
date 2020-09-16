@@ -1,0 +1,26 @@
+.element {
+    border-bottom: 1px solid var(--section-line);
+}
+
+.element__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+}
+.element__description {
+    padding-left: 1rem;
+}
+.element__descriptionWeather {
+    text-transform: capitalize;
+}
+.element__weather {
+    display: flex;
+    padding-right: 1rem;
+}
+.element__weatherDescription {
+    display: block;
+}
+.element__indicator {
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+}

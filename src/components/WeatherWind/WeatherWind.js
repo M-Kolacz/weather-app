@@ -7,10 +7,8 @@ import WindChart from './WindChart';
 const WeatherWind = () => {
     return (
         <SectionContainer>
-            <div className='wind'>
-                <WindDescription />
-                <WindChart />
-            </div>
+            <WindDescription />
+            <WindChart />
         </SectionContainer>
     );
 };

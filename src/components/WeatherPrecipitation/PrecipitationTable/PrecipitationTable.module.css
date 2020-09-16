@@ -1,0 +1,16 @@
+.table {
+    text-align: center;
+}
+
+.table__body {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.table__td {
+    padding: 0.5rem;
+}
+
+.svg {
+    width: 25px;
+}

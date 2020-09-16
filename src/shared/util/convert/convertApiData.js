@@ -31,7 +31,7 @@ export const convertDaily = (daily) => {
     return daily.map((day) => ({
         ...day,
         dew_point: convertToInteger(day.dew_point),
-        wind_speed: convertToInteger(day.wind_speed),
+        wind_speed: convertMetresPerSecond(day.wind_speed),
 
         pressure: convertToKilo(day.pressure),
         uvi: convertToInteger(day.uvi),

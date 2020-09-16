@@ -9,14 +9,15 @@ import SectionTitle from '../../shared/UIElements/SectionTitle';
 import Arrow from '../../shared/UIElements/Arrow';
 
 import classes from './WindDescription.module.css';
+import padding from '../../global/padding.module.css';
 
 const WindDescription = () => {
     const [{ wind_speed, wind_deg }] = useSelectState(CURRENT);
 
     return (
-        <div className={classes.wind__container}>
+        <>
             <SectionTitle>Wind</SectionTitle>
-            <div className={classes.wind__represent}>
+            <div className={`${classes.wind__represent} ${padding.paddingLeft}`}>
                 <p className={classes.wind__value}>{wind_speed}</p>
                 <div className={classes.wind_wrapper}>
                     <Arrow windDegree={wind_deg} />
@@ -27,7 +28,7 @@ const WindDescription = () => {
                     <p className={classes.wind__direction}>From {getWindDirection(wind_deg)}</p>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { getTimelineRange } from '../util/get/getTimelineRange';
 
 import { TODAY, TOMORROW } from '../SSOT/paths';
-import { CURRENT, HOURLY } from '../SSOT/timelineCondition';
+import { CURRENT, HOURLY, DAILY } from '../SSOT/timelineCondition';
 
 export const useSelectState = (timeline) => {
     const { path } = useRouteMatch();
@@ -21,7 +21,7 @@ export const useSelectState = (timeline) => {
         if (path === TODAY) state = weatherData.hourlyForecast.slice(todayStart, todayEnd);
         else if (path === TOMORROW)
             state = weatherData.hourlyForecast.slice(tomorrowStart, tomorrowEnd);
-    }
+    } else if (timeline === DAILY) state = weatherData.dailyForecast;
 
     return [state, path];
 };

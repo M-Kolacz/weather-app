@@ -1,0 +1,9 @@
+.scroll {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}

@@ -9,7 +9,7 @@ import { HOURLY } from '../../../shared/SSOT/timelineCondition';
 
 import CustomAxisTick from '../../../shared/customCharts/CustomAxisTick';
 
-import classes from './HourlyForecast.module.css';
+import ScrollContainer from '../../../shared/UIElements/ScrollContainer';
 
 const HourlyForecast = () => {
     const [hourlyForecast] = useSelectState(HOURLY);
@@ -19,7 +19,7 @@ const HourlyForecast = () => {
     });
     const chartWidth = getChartWidth(hourlyForecast.length);
     return (
-        <div className={classes.hourlyChart}>
+        <ScrollContainer>
             <AreaChart
                 width={chartWidth}
                 height={150}
@@ -55,7 +55,7 @@ const HourlyForecast = () => {
                     tickLine={false}
                 />
             </AreaChart>
-        </div>
+        </ScrollContainer>
     );
 };
 

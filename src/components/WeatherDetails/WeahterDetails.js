@@ -8,18 +8,14 @@ import { CURRENT } from '../../shared/SSOT/timelineCondition';
 import SectionContainer from '../../shared/UIElements/SectionContainer';
 import SectionTitle from '../../shared/UIElements/SectionTitle';
 
-import classes from './WeatherDetails.module.css';
+import padding from '../../global/padding.module.css';
 
 const WeatherDetails = () => {
     const [currentWeather] = useSelectState(CURRENT);
     return (
         <SectionContainer>
-            <div className={classes.details}>
-                <div className={classes.details__container}>
-                    <SectionTitle>Current details</SectionTitle>
-                    {weatherIndicators(currentWeather)}
-                </div>
-            </div>
+            <SectionTitle>Current details</SectionTitle>
+            <div className={padding.paddingLeft}>{weatherIndicators(currentWeather)}</div>
         </SectionContainer>
     );
 };

@@ -8,6 +8,7 @@ import { getChartWidth } from '../../shared/util/get/getChartWidth';
 import { HOURLY } from '../../shared/SSOT/timelineCondition';
 
 import classes from './WindChart.module.css';
+import ScrollContainer from '../../shared/UIElements/ScrollContainer';
 
 const WindChart = () => {
     const [hourlyForecast] = useSelectState(HOURLY);
@@ -15,7 +16,7 @@ const WindChart = () => {
     const arrows = windArrows(hourlyForecast);
     const chartWidth = getChartWidth(hourlyForecast.length);
     return (
-        <div className={classes.windChart}>
+        <ScrollContainer>
             <div className={classes.arrows} style={{ width: chartWidth - 55 }}>
                 {arrows}
             </div>
@@ -23,7 +24,7 @@ const WindChart = () => {
                 width={chartWidth}
                 height={120}
                 data={hourlyForecast}
-                margin={{ top: 0, right: 30, left: 20, bottom: 5 }}
+                margin={{ top: 0, right: 30, left: 0, bottom: 0 }}
             >
                 <Bar
                     dataKey='wind_speed'
@@ -40,7 +41,7 @@ const WindChart = () => {
                 />
                 <YAxis domain={[0, 30]} hide />
             </BarChart>
-        </div>
+        </ScrollContainer>
     );
 };
 
