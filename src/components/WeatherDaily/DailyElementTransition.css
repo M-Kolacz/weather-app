@@ -1,0 +1,21 @@
+.dailyElement-enter {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.dailyElement-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 200ms, transform 200ms;
+}
+
+.dailyElement-exit {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.dailyElement-exit-active {
+    opacity: 0;
+    transform: translateY(-45px);
+    transition: opacity 200ms, transform 200ms;
+}

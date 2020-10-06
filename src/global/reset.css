@@ -3,3 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: aquamarine;
+}
+#root {
+    max-width: 1000px;
+    background-color: white;
+    margin: 0 auto;
+}
+.main-blank {
+    background-color: white;
+    height: calc(100vh - 111px);
+}
+
+@media (min-width: 740px) {
+    .main-blank {
+        height: calc(100vh - 125px);
+    }
+}

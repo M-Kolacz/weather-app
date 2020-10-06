@@ -9,7 +9,9 @@ import DailyElement from './DailyElement';
 const DailyList = () => {
     const [dailyForecast] = useSelectState(DAILY);
 
-    return dailyForecast.map((dailyWeather) => <DailyElement {...dailyWeather} />);
+    return dailyForecast.map((dailyWeather) => (
+        <DailyElement {...dailyWeather} key={dailyWeather.dt} />
+    ));
 };
 
 export default DailyList;

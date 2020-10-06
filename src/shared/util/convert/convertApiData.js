@@ -22,7 +22,7 @@ export const convertHourly = (hourly) => {
         feels_like: convertToTemp(hour.feels_like),
         dew_point: convertToInteger(hour.dew_point),
         pressure: convertToKilo(hour.pressure),
-        visibility: convertToKilo(hour.visibility),
+        visibility: 'visible',
         wind_speed: convertMetresPerSecond(hour.wind_speed),
         hour: getHour(hour.dt),
     }));

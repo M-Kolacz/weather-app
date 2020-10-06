@@ -19,6 +19,7 @@ const NavLinks = () => {
                         Tomorrow
                     </NavLink>
                 </li>
+
                 <li className={classes.navLinks__item}>
                     <NavLink to={DAYS10} className={classes.navLinks__link}>
                         10 days

@@ -8,8 +8,9 @@ import classes from './PrecipitationTable.module.css';
 export const rowSvg = (hourlyForecast) => {
     return hourlyForecast.map((hour) => {
         const rainValue = hour.rain?.['1h'];
+
         return (
-            <td className={classes.table__td}>
+            <td className={classes.table__td} key={hour.dt}>
                 <svg x='0px' y='0px' viewBox='0 0 512 512' className={classes.svg}>
                     {getWaterDropSvg(rainValue)}
                 </svg>
@@ -19,10 +20,16 @@ export const rowSvg = (hourlyForecast) => {
 };
 export const rowVolume = (hourlyForecast) => {
     return hourlyForecast.map((hour) => (
-        <td className={classes.table__td}>{hour.rain?.['1h'] || '-'}</td>
+        <td className={classes.table__td} key={hour.dt}>
+            {hour.rain?.['1h'] || '-'}
+        </td>
     ));
 };
 
 export const rowTime = (hourlyForecast) => {
-    return hourlyForecast.map(({ dt }) => <td className={classes.table__td}>{getHour(dt)}</td>);
+    return hourlyForecast.map(({ dt }) => (
+        <td className={classes.table__td} key={dt}>
+            {getHour(dt)}
+        </td>
+    ));
 };
